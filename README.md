@@ -56,8 +56,8 @@ python run.py
 ### Example
 
 ```plaintext
-User: Hello, how are you?
-Assistant: I am an AI model here to assist you!
+<user>Hello, how are you?<end>
+<assistant>I am an AI model here to assist you!
 ```
 
 ### Note
