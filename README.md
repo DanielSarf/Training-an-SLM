@@ -56,8 +56,10 @@ python run.py
 ### Example
 
 ```plaintext
-<user>Hello, how are you?<end>
-<assistant>I am an AI model here to assist you!
+<|user|>:
+Hello, how are you?
+<|assistant|>:
+I am an AI model here to assist you!<|endoftext|>
 ```
 
 ### Note
