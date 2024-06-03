@@ -1,4 +1,4 @@
-# Training-an-SLM
+# Training an SLM
 
 This experiment implements and modifies Andrej Karpathy's nanoGPT to train a significantly smaller language model. Despite its small size, this model can generate relatively coherent text but struggles with instruction-following and accurate information retrieval. Typically, models with over a billion parameters are needed for consistently usable responses.
 
