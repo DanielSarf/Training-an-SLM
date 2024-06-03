@@ -1,8 +1,18 @@
-# Training an SLM
+Training an SLM
 
 This experiment is an adaptation of Andrej Karpathy's nanoGPT to train a small language model. Despite its small size, this model can generate relatively coherent text but struggles with instruction-following and accurate information retrieval. Typically, models with over a billion parameters are needed for consistently usable responses.
 
 Datasets were sourced from Hugging Face. The model architecture consists of 123.59 million parameters, 12 layers with 12 heads per layer, and an embedding dimension of 768 across a vocabulary of 50304 tokens. Bias was not used and initial training had a dropout rate of 0.0, which was adjusted to 1.0 during fine-tuning. The dataset mix included various sets from Open-Orca, Databricks Dolly 15 and others[^1].
+
+## Training results
+
+#### Initial vs Favorite Model Output
+![Initial vs Favorite Model Output](media/before_and_after_training.png)
+<br><br>
+#### Red is base training and blue is finetuning
+<img src="media/iter.png" width=750>
+<img src="media/train_loss.png" width=750>
+<img src="media/val_loss.png" width=750>
 
 ## Installation
 
