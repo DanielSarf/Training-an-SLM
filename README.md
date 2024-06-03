@@ -15,7 +15,7 @@ Datasets were sourced from Hugging Face. The model architecture consists of 123.
 
 1. Clone the repository.
     ```sh
-    git clone <repository_url>
+    git clone https://github.com/DanielSarf/Training-an-SLM.git
     ```
 
 2. Install the necessary dependencies.
