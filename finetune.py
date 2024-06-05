@@ -19,7 +19,6 @@ from model import GPT
 
 # -----------------------------------------------------------------------------
 
-# Load locally downloaded datasets, tokenize them aswell:
 tokenizer = AutoTokenizer.from_pretrained("gpt2")
 endOfTextToken = tokenizer("<|endoftext|>").input_ids[0]
 
