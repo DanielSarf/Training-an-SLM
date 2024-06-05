@@ -260,7 +260,8 @@ class GPT(nn.Module):
         the sequence max_new_tokens times, feeding the predictions back into the model each time.
         Most likely you'll want to make sure to be in model.eval() mode of operation for this.
         """
-
+        org_idx_len = len(idx)
+        
         for _ in range(max_new_tokens):
             # if the sequence context is growing too long we must crop it at block_size
             idx_cond = idx if idx.size(1) <= self.config.block_size else idx[:, -self.config.block_size:]
@@ -307,4 +308,5 @@ class GPT(nn.Module):
         with torch.no_grad():
             with ctx:
                 y = self.generate(x, max_new_tokens, temperature=temperature, top_k=top_k, eot_token = tokenizer.eos_token_id)
-                return tokenizer.decode(y[0].tolist())
+                
+                return tokenizer.decode(y[0].tolist()[len(x[0]):])

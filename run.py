@@ -2,6 +2,7 @@ from model import GPT
 import os
 import torch
 from dataclasses import dataclass
+import re
 
 models_dir = os.path.join(os.path.dirname(__file__), "Checkpoints")
 
@@ -55,6 +56,16 @@ model.load_state_dict(state_dict)
 
 model.to(device)
 
-userText = input("User:\n")
+totalText = ""
 
-print(model.generate_text("<|user|>:\n" + userText + "\n<|assistant|>:\n", 512))
+print("Use keyboard interrupt to exit\n\n")
+
+splitters = ["<|a", "<|s", "<|u", "<|e"]
+pattern = '|'.join(map(re.escape, splitters))
+while (True):
+    userText = "<|user|>:\n" + input("User:\n") + "\n<|assistant|>:\n"
+    totalText += userText
+    assistantText = model.generate_text(totalText[300:] if len(totalText) > 300 else totalText, 512)
+    assistantText = re.split(pattern, assistantText)[0]
+    totalText += assistantText
+    print(f"\nAssistant:\n{assistantText}")
