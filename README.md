@@ -115,4 +115,4 @@ Special thanks to Andrej Karpathy for nanoGPT, which served as the basis for thi
 
 For any further inquiries or detailed descriptions of script functionalities, please refer to the provided documentation or reach out to me.
 
-[^1]: Refer to the dataset sources for detailed information. You can find commented out linked to them in 'create_first_training_data.py'.
+[^1]: Refer to the dataset sources for detailed information. You can find commented out links to them in 'create_first_training_data.py'.
